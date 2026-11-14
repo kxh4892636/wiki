@@ -16,7 +16,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <div>
         给我{" "}
-        <a rel="github" href="https://github.com/kxh4892636/kxh-kit">
+        <a rel="github" href="https://github.com/kxh4892636/wiki">
           github
         </a>{" "}
         一颗闪亮的✨

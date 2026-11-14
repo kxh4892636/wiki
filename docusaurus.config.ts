@@ -14,7 +14,7 @@ const config: Config = {
   baseUrl: "/",
 
   organizationName: "kxh4892636",
-  projectName: "kxh-kit",
+  projectName: "wiki",
 
   onBrokenLinks: "throw",
 
@@ -40,7 +40,7 @@ const config: Config = {
         docs: {
           path: "docs",
           sidebarPath: "./sidebars.ts",
-          editUrl: "https://github.com/kxh4892636/kxh-kit/",
+          editUrl: "https://github.com/kxh4892636/wiki/",
           // 在默认 remark 插件之前跑：导图标题不能进目录，否则右侧目录栏会空一列
           beforeDefaultRemarkPlugins: [remarkMindmap],
           remarkPlugins: [remarkMath],
@@ -105,7 +105,7 @@ const config: Config = {
           position: "right",
         },
         {
-          href: "https://github.com/kxh4892636/kxh-kit/",
+          href: "https://github.com/kxh4892636/wiki/",
           label: "GitHub",
           position: "right",
         },
