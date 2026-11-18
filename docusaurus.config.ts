@@ -3,7 +3,6 @@ import type { Config } from "@docusaurus/types";
 import { themes as prismThemes } from "prism-react-renderer";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
-import remarkMindmap from "@kxh4892636/docusaurus-plugin-mindmap/remark";
 
 const config: Config = {
   title: "KXH-WIKI",
@@ -41,8 +40,6 @@ const config: Config = {
           path: "docs",
           sidebarPath: "./sidebars.ts",
           editUrl: "https://github.com/kxh4892636/wiki/",
-          // 在默认 remark 插件之前跑：导图标题不能进目录，否则右侧目录栏会空一列
-          beforeDefaultRemarkPlugins: [remarkMindmap],
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },

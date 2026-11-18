@@ -29,9 +29,6 @@ importers:
       '@kxh4892636/docusaurus-plugin-link':
         specifier: https://raw.githubusercontent.com/kxh4892636/docusaurus-plugin-link/main/release/kxh4892636-docusaurus-plugin-link-0.1.0.tgz
         version: https://raw.githubusercontent.com/kxh4892636/docusaurus-plugin-link/main/release/kxh4892636-docusaurus-plugin-link-0.1.0.tgz(f4e04328b723c453762ee7843f14d72e)
-      '@kxh4892636/docusaurus-plugin-mindmap':
-        specifier: https://raw.githubusercontent.com/kxh4892636/docusaurus-plugin-mindmap/main/release/kxh4892636-docusaurus-plugin-mindmap-0.1.0.tgz
-        version: https://raw.githubusercontent.com/kxh4892636/docusaurus-plugin-mindmap/main/release/kxh4892636-docusaurus-plugin-mindmap-0.1.0.tgz(@docusaurus/core@3.10.1(@docusaurus/faster@3.10.1(@docusaurus/types@3.10.1(@swc/core@1.16.22)(@swc/html@1.16.22)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.32))(csso@5.0.5)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.0.0)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.32))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.32)(svgo@3.3.5))(@mdx-js/react@3.0.0(@types/react@19.3.0)(react@19.3.1))(@rspack/core@1.7.12)(@swc/core@1.16.22)(@swc/html@1.16.22)(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.32))(csso@5.0.5)(debug@4.4.3(supports-color@8.0.0))(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.0.0)(svgo@3.3.5))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       '@mdx-js/react':
         specifier: ^3.0.0
         version: 3.0.0(@types/react@19.3.0)(react@19.3.1)
@@ -1530,14 +1527,6 @@ packages:
 
   '@kxh4892636/docusaurus-plugin-link@https://raw.githubusercontent.com/kxh4892636/docusaurus-plugin-link/main/release/kxh4892636-docusaurus-plugin-link-0.1.0.tgz':
     resolution: {integrity: sha512-xBPtUnfnBrTlYcccbv3iRPkSsWtmRkWWmW5WBZZz8lHHtxI8kRnT/rdqCu9DzbarYJiYpiqN6EeH0jm0OaaZtw==, tarball: https://raw.githubusercontent.com/kxh4892636/docusaurus-plugin-link/main/release/kxh4892636-docusaurus-plugin-link-0.1.0.tgz}
-    version: 0.1.0
-    peerDependencies:
-      '@docusaurus/core': ^3.10.1
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-
-  '@kxh4892636/docusaurus-plugin-mindmap@https://raw.githubusercontent.com/kxh4892636/docusaurus-plugin-mindmap/main/release/kxh4892636-docusaurus-plugin-mindmap-0.1.0.tgz':
-    resolution: {integrity: sha512-i+eKBP/zVdyPjIcFhqSaXaczEecuKRJxqz8hIamn5kLIC8RhF+mfD1fXbdrfzgUMSYwDLAUeFDtfw4tAqfTnBA==, tarball: https://raw.githubusercontent.com/kxh4892636/docusaurus-plugin-mindmap/main/release/kxh4892636-docusaurus-plugin-mindmap-0.1.0.tgz}
     version: 0.1.0
     peerDependencies:
       '@docusaurus/core': ^3.10.1
@@ -5211,8 +5200,8 @@ packages:
     peerDependencies:
       react: ^19.3.1
 
-  react-fast-compare@3.2.0:
-    resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
+  react-fast-compare@3.2.3:
+    resolution: {integrity: sha512-WY9YHI1jjYC5a2lNRfHbeaNVQqiY+mMKWBSw1mPU0FgevlxI6V7izhNYz7Vp5ieFxetuRb6RmihPQxXEzg7oWQ==}
 
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
@@ -9130,12 +9119,6 @@ snapshots:
       - uglify-js
       - webpack-cli
 
-  ? '@kxh4892636/docusaurus-plugin-mindmap@https://raw.githubusercontent.com/kxh4892636/docusaurus-plugin-mindmap/main/release/kxh4892636-docusaurus-plugin-mindmap-0.1.0.tgz(@docusaurus/core@3.10.1(@docusaurus/faster@3.10.1(@docusaurus/types@3.10.1(@swc/core@1.16.22)(@swc/html@1.16.22)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.32))(csso@5.0.5)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.0.0)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.32))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.32)(svgo@3.3.5))(@mdx-js/react@3.0.0(@types/react@19.3.0)(react@19.3.1))(@rspack/core@1.7.12)(@swc/core@1.16.22)(@swc/html@1.16.22)(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.32))(csso@5.0.5)(debug@4.4.3(supports-color@8.0.0))(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.0.0)(svgo@3.3.5))(react-dom@19.3.1(react@19.3.1))(react@19.3.1)'
-  : dependencies:
-      '@docusaurus/core': 3.10.1(@docusaurus/faster@3.10.1(@docusaurus/types@3.10.1(@swc/core@1.16.22)(@swc/html@1.16.22)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.32))(csso@5.0.5)(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.0.0)(svgo@3.3.5))(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.32))(csso@5.0.5)(html-minifier-terser@7.2.0)(postcss@8.5.32)(svgo@3.3.5))(@mdx-js/react@3.0.0(@types/react@19.3.0)(react@19.3.1))(@rspack/core@1.7.12)(@swc/core@1.16.22)(@swc/html@1.16.22)(@typescript/typescript6@6.0.2)(clean-css@5.3.3)(cssnano@6.1.2(postcss@8.5.32))(csso@5.0.5)(debug@4.4.3(supports-color@8.0.0))(html-minifier-terser@7.2.0)(lightningcss@1.33.0)(postcss@8.5.32)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)(supports-color@8.0.0)(svgo@3.3.5)
-      react: 19.3.1
-      react-dom: 19.3.1(react@19.3.1)
-
   '@leichtgewicht/ip-codec@2.0.5': {}
 
   '@mdx-js/mdx@3.0.0(supports-color@8.0.0)':
@@ -9453,7 +9436,7 @@ snapshots:
       prop-types: 15.8.1
       react: 19.3.1
       react-dom: 19.3.1(react@19.3.1)
-      react-fast-compare: 3.2.0
+      react-fast-compare: 3.2.3
       shallowequal: 1.1.0
 
   '@slorber/remark-comment@1.0.0':
@@ -13217,7 +13200,7 @@ snapshots:
       react: 19.3.1
       scheduler: 0.28.0
 
-  react-fast-compare@3.2.0: {}
+  react-fast-compare@3.2.3: {}
 
   react-is@16.13.1: {}
 
