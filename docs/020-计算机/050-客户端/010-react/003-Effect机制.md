@@ -5,6 +5,10 @@ anki: true
 
 # React 的 Effect Hook 机制是什么？
 
+## 常见问题
+
+- 简述 React 中的 Effect Hook 机制
+
 ## 概念索引
 
 - Effect: 把组件与外部系统的同步写进 setup / cleanup;

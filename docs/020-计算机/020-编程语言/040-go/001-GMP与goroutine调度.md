@@ -5,6 +5,17 @@ anki: true
 
 # Go 的 GMP 模型与 goroutine 调度是怎样的？
 
+## 常见问题
+
+- 简单介绍 GMP 模型以及该模型的优点
+- 简述 Goroutine 的调度流程
+- 协程与进程，线程的区别是什么？协程有什么优势？
+- Golang 的一个协程能保证绑定在一个内核线程上吗？
+- Golang 的协程可以自己主动让出 CPU 吗？
+- 简述 Golang 的伪抢占式调度
+- 什么是 goroutine 泄漏
+- groutinue 什么时候会被挂起？
+
 ## 概念索引
 
 - G: goroutine，用户态轻量执行单元;

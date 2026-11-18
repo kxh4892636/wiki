@@ -5,6 +5,10 @@ anki: true
 
 # React 的 setState 原理是什么？
 
+## 常见问题
+
+- 简述 React setstate 原理
+
 ## 概念索引
 
 - setState: 类组件请求更新的入口;

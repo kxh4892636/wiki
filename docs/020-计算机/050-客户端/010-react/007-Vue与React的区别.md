@@ -5,6 +5,10 @@ anki: true
 
 # Vue 和 React 有什么区别？
 
+## 常见问题
+
+- 简述 Vue 和 React 的区别
+
 ## 概念索引
 
 | 概念 | React | Vue |
