@@ -11,25 +11,29 @@ anki: true
 
 ## 概念索引
 
-- setState: 类组件请求更新的入口;
-- useState setter: 函数组件的更新入口;
-- 批处理: 同一事件中的更新合并提交;
+- setter: useState 返回的更新函数;
 - 快照: 一次渲染中的 state 固定;
-- 队列: 更新函数按入队顺序计算;
-- 合并: 类组件浅合并，函数组件替换值;
+- 队列: 直接值与更新函数按入队顺序计算;
+- 批处理: 同一次事件回调中的更新合并;
+- 替换: 新值直接替换旧值;
+- 纯函数: 更新函数只计算，不发请求;
 
-## setState 与 useState 有什么不同？
+## setter 如何请求更新？
 
-| 项 | 类组件 setState | 函数组件 setState |
-| --- | --- | --- |
-| 合并 | 对象参数与原 state 浅合并 | 新值直接替换 |
-| 更新函数 | (state, props) => next | (prev) => next |
-| 回调 | 第二个参数，提交后执行 | 无，放 Effect 或事件 |
-| 读取 | 调用后 this.state 仍是旧值 | 当前渲染变量仍是旧值 |
+面试题中的 setState 指状态更新机制；函数组件用 `useState` 的 setter 触发更新。
+
+| 步骤 | 行为 |
+| --- | --- |
+| 调用 setter | 把直接值或更新函数放入队列 |
+| 计算 | React 按入队顺序得到下一次 state |
+| 渲染 | 用新 state 调用组件，得到新快照 |
+| 提交 | 把变更写入 DOM，浏览器绘制 |
 
 ```jsx
-this.setState({ count: this.state.count + 1 });
-this.setState((state) => ({ count: state.count + 1 }));
+const [count, setCount] = useState(0);
+
+setCount(count + 1);
+setCount((n) => n + 1);
 ```
 
 ## 更新队列如何计算？
@@ -67,12 +71,11 @@ setCount((n) => n + 1);
 
 ## 批处理如何影响渲染？
 
-- React 18+ 事件: 同一事件中的更新合并为一次渲染;
-- React 18+ Promise / setTimeout: 自动批处理;
-- React 17 及以前: 仅 React 事件内批处理;
-
+- 事件: 一次事件处理函数的执行，例如一次点击触发的 `onClick`；不是 DOM 事件对象，也不是事件类型;
+- 事件处理函数: 同一次回调中的多次更新合并为一次渲染;
+- Promise / setTimeout / 原生事件: 这些位置的更新也会自动批处理;
+- 两次独立点击是两次事件，分别渲染;
 - 批处理期间读取的 state 仍是当前快照;
-- 需要基于待处理值计算时用更新函数;
 - 更新函数必须是纯函数，不发请求、不改旧对象;
 
 ## 常见坑
@@ -81,6 +84,6 @@ setCount((n) => n + 1);
 | --- | --- | --- |
 | 调用后立刻读 state | 读到旧值 | 用更新函数或 Effect |
 | 直接修改对象/数组 | 引用不变，可能跳过更新 | 复制后替换 |
-| 在渲染中 setState | 无限循环 | 放到事件或 Effect |
+| 在渲染中调用 setter | 无限循环 | 放到事件或 Effect |
 | 更新函数里副作用 | StrictMode 可能执行两次 | 只做纯计算 |
 | 复制 props 到 state | props 更新不同步 | 直接用 props |

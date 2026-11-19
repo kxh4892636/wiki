@@ -51,7 +51,7 @@ const count = ref(0);
 | 项 | React | Vue |
 | --- | --- | --- |
 | 读取 | 快照，当前渲染固定 | 响应式对象，随时读最新 |
-| 更新 | setState / setter | 直接赋值 |
+| 更新 | useState setter | 直接赋值 |
 | 批处理 | 自动批处理 | 异步更新队列 |
 | 派生 | 渲染中计算 | computed 缓存 |
 | 侦听 | useEffect | watch / watchEffect |
