@@ -73,29 +73,18 @@ M 绑定 P，从 runnext / 本地队列取 G
 
 ## 系统调用阻塞时发生了什么？
 
-- 进入: G 调 entersyscall，P 转 _Psyscall，M 与 P 解绑;
-- 卡住: 线程在内核里睡，跑不了任何 Go 代码，也带不走 P;
-- 收回: sysmon 发现 M 停留超 20µs，把 P 交给空闲 M 或新建 M;
-- 返回: G 转 _Grunnable 入队，原 M 抢到 P 才接着跑，抢不到就休眠;
-- 例外: socket 是非阻塞的，走 netpoller，只挂起 G 不卡线程;
-- cgo: 调用期间同样交出 P，与系统调用同一路径;
+- 线程在内核里睡，跑不了任何 Go 代码，也带不走 P;
+- sysmon 发现 M 停留超 20µs，把 P 交给空闲 M 或新建 M;
 
 ```go
 go func() { os.Read(fd, buf) }() // 文件 IO 卡住线程，触发 handoff
 go func() { conn.Read(buf) }()   // 网络 IO 走 netpoller，线程不卡
 ```
 
-- 代价: 大量阻塞调用会撑大线程数，逼近 10000 上限就报错;
-
 ## 长循环不让出会怎样？
 
-- 场景: 紧凑循环里没有函数调用，到达不了任何检查点;
-- 协作抢占: 只在函数入口的栈检查处响应，循环体内部不检查;
-- 后果: 同 P 上的 G 排队饿死，GC 等不到安全点，整个程序卡住;
 - 异步抢占: Go 1.14 起 sysmon 对连续跑超 10ms 的 G 发 SIGURG;
 - 信号处理: 把 G 停在安全点挂起，调度器换下一个 G 上 P;
-- Windows: 用 SuspendThread 代替信号，效果相同;
-- 兜底: 循环体里调 runtime.Gosched 或普通函数，主动还 P;
 
 ```go
 for { sum += i }        // 无调用，只能等 10ms 的异步抢占
