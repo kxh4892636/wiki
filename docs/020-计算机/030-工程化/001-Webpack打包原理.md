@@ -96,4 +96,3 @@ class BannerPlugin {
 - 范围: 缩小 loader 的 include, 跳过 node_modules;
 - 并行: thread-loader 或多进程压缩, 但进程通信有成本;
 - 分析: 用 stats 与 speed-measure 找耗时最长的 loader;
-- 取舍: 缓存换内存与磁盘, 分块换请求数, 都要按真实指标调;
