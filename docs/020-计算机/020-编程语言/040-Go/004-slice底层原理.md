@@ -65,17 +65,32 @@ fmt.Println(arr) // [10 2 3]
 
 ```go
 s := []int{1, 2}
-s = append(s, 3) // 容量足够时原地追加
-s = append(s, 4, 5)
+a := s[0:1]     // len 1, cap 2
+b := s[0:1:1]   // len 1, cap 1，容量锁死
 
-dst := make([]int, len(s))
-n := copy(dst, s) // 复制 min(len(dst), len(src)) 个元素
+a = append(a, 9) // 容量够，原地写 s[1]
+b = append(b, 9) // 容量不够，分配新数组
 ```
 
-- append 返回新的描述符，必须接收返回值;
-- 容量不足时分配新数组并复制旧元素;
-- copy 不增加目标长度，允许源和目标重叠;
-- 三下标切片 a[low:high:max] 可限制新 slice 的容量;
+```text
+s: [1][2]            a、b 都指向它
+a: len 1, cap 2
+b: len 1, cap 1
+
+append(a, 9) → s 变 [1][9]，a 仍指向 s
+append(b, 9) → b 指向新数组 [1][9]，s 不变
+```
+
+| 写法 | len | cap |
+| --- | --- | --- |
+| `s[low:high]` | high − low | cap(s) − low |
+| `s[low:high:max]` | high − low | max − low |
+
+- append 返回新描述符，必须接收返回值;
+    - 容量够: 原地写，共享该数组的 slice 都会看到变化;
+    - 容量不够: 分配新数组并复制旧元素，原数组不动;
+- 三下标: 第三个数字 `max` 把容量锁在 `max − low`，调用方 append 越界就得扩容;
+- copy: 不改变目标长度，源与目标可重叠，返回复制的元素个数;
 
 ## 截取为什么会互相影响？
 
